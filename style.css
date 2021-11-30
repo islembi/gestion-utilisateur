@@ -1,7 +1,61 @@
-.boutton{
-    margin-left: 30em;
-    border-bottom-color: brown;
-    color: brown;
-    border-bottom-style:double;
-    background-color:coral;
+/* --Corps du devoir-- */
+body{ 
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    margin: 10%;
+    padding:2% ;
+    background-image: url("https://c.wallhere.com/photos/b8/fb/chile_blue_wild_sky_panorama_patagonia_lake_mountains-860635.jpg!d") ;
+    background-size:cover;
+    border: 2px solid;
+  color: rgb(0, 214, 252);
+  resize: both;
+  overflow: scroll;
+    font-family:  Tahoma, Geneva, Verdana, sans-serif;
+}
+h5{
+  color: aliceblue; 
+}    
+/* --table--formulaire d'ajoute utilisateurs-- */
+.modal-content{
+   
+    top: auto;
+    left: -50%;
+   width: 100%;
+   margin: 100%;
+   padding:1%;
+    transform:translate(-50%, 50%) ;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.4);s
+    border-radius:10px ;
+    border: 0.1px solid #fff;
+ }
+  /* --taille formulaire ajout utilisateur-- */
+.modal-body{
+    top: auto%;
+    left: 50%;
+   width: 77.9%;
+   margin: 1%;
+   padding:1%;
+   transform:translate(-52%, 0%) ;
+   box-sizing: border-box;
+   background-color: rgba(0, 0, 0, 0.4);
+  border-radius:10px ;
+   border: 0.1px solid #fff;
+}
+ /* --taille de la zone de coordonnées-- */
+.form input[type=text],.form input[type=email],.form input[type=date], {
+    padding: 0%;
+    margin: 0%;
+    transform:translate(0%, 0%) ;
+    border-bottom: 0.1px solid  #fff;
+   
+   border: 0.1px solid #fff;
+}
+/* --taille de l'encadrement de zone coordonnées-- */
+form  {
+    width:100%;
+    padding: 2%;
+    margin: 0%;
+    transform:translate(0%, 0%) ;  
 }

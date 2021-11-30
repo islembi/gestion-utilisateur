@@ -1,88 +1,133 @@
 <!doctype html>
 <html lang="en">
-   <head>
-      <!-- Required meta tags -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <link rel="stylesheet" href="style.css">
-      <title>Hello, world!</title>
-   </head>
-   <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         <a class="navbar-brand" href="#">Mon Projet JS</a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto" Align=center>
-               <li class="nav-item active">
-                  <a class="nav-link" href="http://127.0.0.1:5500/testjs/gestionutilisateur.html"> Gestion d'utilisateur <span class="sr-only">(current)</span></a>
-               </li>
-               <li class="nav-item active">
-                  <a class="nav-link" href="http://127.0.0.1:5500/testjs/todolist.html"> Todo list <span class="sr-only">(current)</span></a>
-               </li>
-            </ul>
-         </div>
-      </nav>
-      <h4 Align=center>----Gestion utilisateur-----</h4>
-      <section class="container">
-         <div class="row">
-            <div class="col">
-               <section class="table-responsive">
-                  <table class="table table-striped" id="table">
-                     <thead>
-                        <tr>
-                           <th>Nom</th>
-                           <th>Prenom</th>
-                           <th>Email</th>
-                           <th>Poste</th>
-                           <th>Supprimer</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                     </tbody>
-                  </table>
-               </section>
-            </div>
-         </div>
-      </section>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      ajouter un utilisateur
+
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="style.css">
+   <title>Hello, world!</title>
+</head>
+
+<body>
+
+   <!-- Navbar -->
+
+   <nav class="navbar navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Ajout d'un utilisateur</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                  </button>
-               </div>
-               <div class="modal-body">
-                  <!--formulaire ajout utilisateur-->
-                  <form id="myform" onsubmit="return addUser()">
-                     <input id="username" type="text" name="username" placeholder="name"/>
-                     <input id="leprenom" type="text" name="leprenom" placeholder="prenom"/>
-                     <input id="laposte" type="text" name="laposte" placeholder="poste"/>
-                     <input id="email" type="email" name="email" placeholder="email"/>
-                     <button type="submit" >ajouter</button>
-                  </form>
-               </div>
-               <!--fin formulaire-->
-               <div class="modal-footer">
-                  <button type="submit" onclick="reset()" class="btn btn-primary" data-dismiss="modal">fermer</button>
-               </div>
+    </nav>
+    <div class="pos-f-t">
+       <div class="collapse" id="navbarToggleExternalContent">
+         <div class="bg-dark p-4">
+           <h4 class="text-white"><b>Projet JS</b></h4>
+           <ul class="navbar-nav mr-auto" Align=center></ul>
+           <li class="nav-item active">
+           <a class="nav-link" href="http://127.0.0.1:5502/gestionutilisateur.html">Gestion d'utilisateur <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+             <a class="nav-link" href="http://127.0.0.1:5502/todolist.html"> Todo list <span class="sr-only">(current)</span></a>
+          </li>
+       </ul>
+       </div>
+       </div>
+  </div>
+   </nav>
+   
+   <h3 Align=center>----Gestion utilisateur-----</h3>
+   <!-- Accordeon -->
+   <div id="accordion">
+      <div class="card">
+         <div class="card-header" id="headingOne">
+            <h3 class="mb-0">
+               <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                  aria-controls="collapseOne">
+                  <em>
+                     <th>Cliquer pour cacher/afficher la liste utilisateur</th>
+                  </em>
+               </button>
+            </h3>
+         </div>
+
+         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+               <!-- Table -->
+               <section class="container">
+                  <div class="row">
+                     <div class="col">
+                        <section class="table-responsive">
+                           <table class="table table-striped" id="table">
+                              <thead>
+                                 <tr>
+                                    <th>Nom</th>
+                                    <th>Prenom</th>
+                                    <th>Email</th>
+                                    <th>Poste</th>
+                                    <th>Supprimer</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                              </tbody>
+                           </table>
+                        </section>
+                     </div>
+                  </div>
+               </section>
+               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                  ajouter un utilisateur
+               </button>
             </div>
          </div>
       </div>
-      <!-- Optional JavaScript -->
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-      <script src="gestion.js"></script> 
-   </body>
+   </div>
+
+
+
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Ajout d'un utilisateur</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <!--formulaire ajout utilisateur-->
+               <form id="myform" onsubmit="return addUser()">
+                  <input id="username" type="text" name="username" placeholder="name" required />
+                  <input id="leprenom" type="text" name="leprenom" placeholder="prenom" required />
+                  <input id="laposte" type="text" name="laposte" placeholder="poste" required />
+                  <input id="email" type="email" name="email" placeholder="email" required />
+                  <br><br><button type="submit" class="btn btn-primary">ajouter</button>
+               </form>
+            </div>
+            <!--fin formulaire-->
+            <div class="modal-footer">
+               <button type="submit" onclick="reset()" class="btn btn-secondary" data-dismiss="modal">fermer</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Optional JavaScript -->
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+   <script src="gestion.js"></script>
+
+</body>
+
 </html>

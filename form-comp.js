@@ -13,7 +13,7 @@ i.setAttribute('id',"tache");
 
 var s = document.createElement("input"); //input element, Submit button
 s.setAttribute('type',"submit");
-s.setAttribute('value',"Submit");
+s.setAttribute('value',"ajouter");
 s.setAttribute('id',"btn-comp");
 
 this.appendChild(i);
